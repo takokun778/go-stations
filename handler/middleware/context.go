@@ -15,7 +15,7 @@ const (
 func SetOSCtx(parent context.Context, userAgent string) context.Context {
 	os := ua.Parse(userAgent)
 
-	return context.WithValue(parent, ctxOS, os)
+	return context.WithValue(parent, ctxOS, os.OS)
 }
 
 func GetOSCtx(ctx context.Context) string {
